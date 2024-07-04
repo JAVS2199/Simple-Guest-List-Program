@@ -20,7 +20,25 @@ public class Main {
             } else if (option == 4){
                 break;
             } else if (option == 2){
-                System.out.println("Name");
+                for (int i = 0; i < guests.length; i++) {
+                    if(guests[i] == null){
+                        System.out.println("Name: ");
+                        String name = scanner.next();
+                        guests[i] = name;
+                        break;
+                    }
+                }
+
+
+            } else if (option == 3){
+                System.out.println("Insert the name you would like to remove: ");
+                String name = scanner.next();
+                for (int i = 0; i < guests.length; i++) {
+                    /*The and condition is added to avoid issues with null */
+                    if(guests[i] != null && name.equals(guests[i])){
+                        guests[i] = null;
+                    }
+                }
             }
         } while(true);
     }
